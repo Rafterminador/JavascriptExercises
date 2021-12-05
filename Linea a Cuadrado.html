@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Figura cambia formas</title>
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+</head>
+
+<body>
+    
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <p id="position"></p>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        var position = 0;
+        var colors = ["Red", "Blue", "Black", "Yellow", "SkyBlue", "Green", "Pink"]
+        var color = function () {
+            return colors[Math.floor(colors.length* Math.random())]
+        }    
+        var colorActual = color()
+        //el dibujar linea, luego rectangulo, luego cuadrado el algoritmo esta basado en un lienzo de 200 pixeles
+        setInterval(function () {
+            ctx.fillStyle = colorActual
+            ctx.clearRect(0, 0, 400, 400);
+            ctx.fillRect(position, 0, position, 400-position);         
+            position++;
+            if (position > 400){
+                position = 0;
+            }
+            //la funcion que detecta el click del  usuario.
+            var clickHandler = function (event) {
+                //esto sucede ya que al querer crear un rectangulo mas grande que el lienzo no se va a mostrar por eso hay dos condicionales
+                if(position+position <= 400){
+                    document.getElementById("position").innerHTML = "tamaño en X " + position + " tamaño en Y " + (400-position)
+                }else{
+                    document.getElementById("position").innerHTML = "tamaño en X " + (400-position) + " tamaño en Y " + (400-position)
+                }      
+                colorActual = color()
+            }
+            $("body").click(clickHandler);   
+        }, 80);     
+    </script>
+</body>
+</html>
