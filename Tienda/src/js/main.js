@@ -1,6 +1,21 @@
-const buscar = () =>{
-    console.log('hola')
-}
-document.getElementById('search').addEventListener('keyup', buscar)
-var algo =document.getElementById('search')
-console.log(algo)
+const fetchStore = async () => {
+    try {
+      const res = await fetch(
+        'https://fakestoreapi.com/products'
+      );
+  
+      const data = await res.json();
+  
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const fetchProducts = async () =>{
+      const products = await fetchStore()
+      products.forEach((element) => {
+          //console.log(element.id)
+      })
+      //console.log(products[0])
+  }
+  //fetchProducts()
