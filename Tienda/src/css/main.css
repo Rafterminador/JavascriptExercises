@@ -8,3 +8,13 @@ img{
     margin-left: 2%;
     margin-right: 2%;
 }
+.rating{
+    display: flex;
+    justify-content: center;
+}
+.rating__star {
+    color: #ffc078;
+}
+#rate{
+    text-align: center;
+}
