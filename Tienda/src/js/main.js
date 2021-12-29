@@ -78,7 +78,7 @@ class UI{
         content.innerHTML = ''
         var texto = e.target.value.toLowerCase()
         this.products.forEach((element) => {
-            if(element.title.indexOf(texto) != -1 || element.category.indexOf(texto) != -1 || element.description.indexOf(texto) != -1){
+            if(element.title.toLowerCase().indexOf(texto) != -1 || element.category.toLowerCase().indexOf(texto) != -1 || element.description.toLowerCase().indexOf(texto) != -1){
                 UI.showOnInterface(element)
             }
         })
