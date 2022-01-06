@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio Clases de Caracter</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Goldman:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        flex-direction: column;
+      }
+      p {
+        text-align: justify;
+        font-family: "Goldman", cursive;
+        font-size: larger;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p class="parrafo1">
+        La leyenda cuenta que el misterioso Pueblo Lavanda tiene en su tonada,
+        un mensaje que solo3 puede ser captado en su versión japonesa de Game
+        Boy. Según cuentan, los jovenes4 pueden &emsp;&emsp; escuchar en esta
+        versión pequeños murmullos producidos por la bitonalidad de la melodía,
+        que son captados por la sensibilidad de sus5 oídos, los cuales
+        conducirían6 a los oyentes a actos sensibles8.
+      </p>
+      <br />
+      <p class="parrafo2">eltempera2002©</p>
+    </div>
+    <script>
+      let texto = document.querySelector('.parrafo1')
+      modificar = texto.innerText
+      modificar = modificar.replace(/\d/g, "")
+      modificar = modificar.replace(/\s\s/g, ' ')
+      texto.textContent = modificar
+      let piePagina = document.querySelector('.parrafo2').textContent
+      piePagina = piePagina.replace(/eltempera/, 'crepypastas')
+      document.querySelector('.parrafo2').textContent = piePagina
+    </script>
+  </body>
+</html>
