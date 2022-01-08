@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio Clases de Caracter</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Goldman:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        flex-direction: column;
+      }
+      p {
+        text-align: justify;
+        font-family: "Goldman", cursive;
+        font-size: larger;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p class="parrafo1">
+        El &emsp;Fenómenoz, Segün Lo Descritoz, Ocürre Cüandoz El Jügador Está Dentro
+        De la &emsp;locación denominada Püeblo Lavanda (üna Peqüeña Area Con La
+        Finalidad de describirnos &emsp;en el jüego el tema de los fantasmas, pües
+        esta füe creada para Memorar a Los "Pokémon fallecidos". La müsica en el
+        área, qüe füe cambiada rápidamente en el segündoz Lanzamientoz del
+        Jüego, contiene compases "bineürales", &emsp;los qüe püeden indücir efectos
+        psicológicos en el $receptor$, estos Pecüliares (compases) son Denominados
+        "tono de püeblo lavanda".
+      </p>
+    </div>
+    <script>
+      let texto = document.querySelector('.parrafo1')
+      let modificar = texto.innerText
+      modificar = modificar.replace(/ü/g, "u")
+      modificar = modificar.replace(/z/g, "s")
+      modificar = modificar.replace(/\$/g, "")
+      modificar = modificar.replace(/\s\s/g, " ")
+      texto.textContent = modificar
+    </script>
+  </body>
+</html>
