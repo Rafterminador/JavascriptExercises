@@ -10,11 +10,24 @@
 </head>
 
 <body>
-    <h1>Gatos Aleatorios</h1>
-    <img alt="foto gato aleatorio" id="img-gato1">
-    <img alt="foto gato aleatorio" id="img-gato2">
-    <img alt="foto gato aleatorio" id="img-gato3">
-    <button id="recargar">Recargar</button>
+    <h1>Api Gatos</h1>
+    <span id="error"></span>
+    <section id="GatosRandom">
+
+        <h2>Gatos aleatorios</h2>
+        <article>
+            <img alt="foto gato aleatorio" id="img-gato1">
+            <button class="BotonFav">Guardar Gato en favoritos</button>
+        </article>
+        <article>
+            <img alt="foto gato aleatorio" id="img-gato2">
+            <button class="BotonFav">Guardar Gato en favoritos</button>
+        </article>
+        <button id="recargar">Recargar</button>
+    </section>
+    <section id="GatosFavoritos">
+        <h2>Gatos favoritos</h2>
+    </section>
     <script src='main.js'></script>
 </body>
 
