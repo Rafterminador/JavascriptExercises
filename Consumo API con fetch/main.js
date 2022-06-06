@@ -16,7 +16,7 @@ const HTTPCodes = {
 }
 
 const loadRandomCats = async () => {
-    const res = await fetch(API_URL + 'images/search?limit=2&page=2&api_key=' + API_KEY)
+    const res = await fetch(API_URL + 'images/search?limit=2&page=2')
     const data = await res.json()
     if (res.ok) {
         const img1 = document.getElementById('img-gato1')
@@ -103,9 +103,44 @@ const removeFavoritesCats = async (e) => {
     loadFavoritesCats()
     //location.reload();
 }
+const uploadGatoPhoto = async () => {
+    const form = document.getElementById('uploadingForm')
+    const formData = new FormData(form)//recibe form como atributo por lo que recibe todos los valores de los input
+    console.log(formData.get('file'))
+    let headersList = {
+        //"Content-Type": "multipart/form-data",
+        "x-api-key": API_KEY,
+    }
+    const res = await fetch(API_URL + 'images/upload', {
+        method: 'POST',
+        headers: headersList,
+        body: formData,
+    })
+    if (!res.ok) {
+        spanError.innerHTML = HTTPCodes[res.status]
+    } else {
+        let data = await res.json();
+        console.log("la data es ", data)
+        let id = data.id
+        let headersList = {
+            "Content-Type": "application/json",
+            "x-api-key": API_KEY,
+        }
+        let bodyContent = JSON.stringify({
+            image_id: id
+        });
+        const res2 = await fetch(API_URL + 'favourites', {
+            method: 'POST',
+            headers: headersList,
+            body: bodyContent,
+        })
+        loadFavoritesCats()
+    }
+}
 document.getElementById('recargar').addEventListener('click', loadRandomCats)
 document.addEventListener('DOMContentLoaded', loadRandomCats)
 document.addEventListener('DOMContentLoaded', loadFavoritesCats)
+document.getElementById('uploadButton').addEventListener('click', uploadGatoPhoto)
 for (let i = 0; i < saveButtons.length; i++) {
     saveButtons[i].addEventListener('click', saveFavoritesCats)
 }
