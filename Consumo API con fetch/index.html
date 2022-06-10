@@ -7,34 +7,41 @@
     <title>API Gatos</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Api Gatos</h1>
-    <span id="error"></span>
-    <section id="GatosRandom">
-
-        <h2>Gatos aleatorios</h2>
-        <article>
-            <img alt="foto gato aleatorio" id="img-gato1">
-            <button class="BotonFav">Guardar Gato en favoritos</button>
-        </article>
-        <article>
-            <img alt="foto gato aleatorio" id="img-gato2">
-            <button class="BotonFav">Guardar Gato en favoritos</button>
-        </article>
-        <button id="recargar">Recargar</button>
-    </section>
-    <section id="uploadGato">
-        <h2>Sube la foto de tu gato</h2>
-        <form id="uploadingForm">
-            <input id="file" type="file" name="file">
-            <button type="button" id="uploadButton">Subir gato</button>
-        </form>
-    </section>
-    <section id="GatosFavoritos">
-        <h2>Gatos favoritos</h2>
-    </section>
+    <header>
+        <img alt="logo" src="./Logo.png" id="logo">
+        <h1>API Gatos</h1>
+    </header>
+    <div id="content">
+        <span id="error"></span>
+        <section id="GatosRandom">
+            <h2>Gatos aleatorios</h2>
+            <article>
+                <img alt="foto gato aleatorio" id="img-gato1">
+                <button class="BotonFav">Guardar en favoritos</button>
+            </article>
+            <article>
+                <img alt="foto gato aleatorio" id="img-gato2">
+                <button class="BotonFav">Guardar en favoritos</button>
+            </article>
+            <button id="recargar">Recargar</button>
+        </section>
+        <section id="uploadGato">
+            <h2>Sube la foto de tu gato</h2>
+            <form id="uploadingForm">
+                <input id="file" type="file" name="file">
+                <button type="button" id="uploadButton">Subir gato</button>
+            </form>
+        </section>
+        <section id="GatosFavoritos">
+            <h2>Gatos favoritos</h2>
+        </section>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src='main.js'></script>
 </body>

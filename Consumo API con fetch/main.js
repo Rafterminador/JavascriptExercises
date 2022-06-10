@@ -49,7 +49,7 @@ const loadFavoritesCats = async () => {
             image.className = element.id
             image.src = element.image.url
             let button = document.createElement('button')
-            button.innerText = "Eliminar Gato de favoritos"
+            button.innerText = "Eliminar de favoritos"
             button.className = "EliminarFav"
             article.appendChild(image)
             article.appendChild(button)
@@ -95,8 +95,8 @@ const uploadGatoPhoto = async () => {
     }
 }
 document.getElementById('recargar').addEventListener('click', loadRandomCats)
-document.addEventListener('DOMContentLoaded', loadRandomCats)
-document.addEventListener('DOMContentLoaded', loadFavoritesCats)
+//document.addEventListener('DOMContentLoaded', loadRandomCats)
+//document.addEventListener('DOMContentLoaded', loadFavoritesCats)
 document.getElementById('uploadButton').addEventListener('click', uploadGatoPhoto)
 for (let i = 0; i < saveButtons.length; i++) {
     saveButtons[i].addEventListener('click', saveFavoritesCats)
